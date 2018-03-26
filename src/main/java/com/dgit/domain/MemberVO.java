@@ -1,71 +1,84 @@
 package com.dgit.domain;
 
-import java.util.Date;
+import java.util.Arrays;
 
 public class MemberVO {
-	private String userid;
-	private String userpw;
-	private String username;
-	private String email;
-	private Date regdate;
-	private Date updatedate;
+	int mno;
+	String name;
+	String id;
+	String pw;
+	String mail;
+	String phone;
+	private String[] files;
 	
+	
+
+	public String[] getFiles() {
+		return files;
+	}
+
+	public void setFiles(String[] files) {
+		this.files = files;
+	}
+
 	public MemberVO() {
 		super();
 	}
 
-	public String getUserid() {
-		return userid;
+	public int getMno() {
+		return mno;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setMno(int mno) {
+		this.mno = mno;
 	}
 
-	public String getUserpw() {
-		return userpw;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserpw(String userpw) {
-		this.userpw = userpw;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getId() {
+		return id;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getPw() {
+		return pw;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
 
-	public Date getRegdate() {
-		return regdate;
+	public String getMail() {
+		return mail;
 	}
 
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 
-	public Date getUpdatedate() {
-		return updatedate;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setUpdatedate(Date updatedate) {
-		this.updatedate = updatedate;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	@Override
 	public String toString() {
-		return "MemberVO [userid=" + userid + ", userpw=" + userpw + ", username=" + username + ", email=" + email
-				+ ", regdate=" + regdate + ", updatedate=" + updatedate + "]";
+		return "MemberVO [mno=" + mno + ", name=" + name + ", id=" + id + ", pw=" + pw + ", mail=" + mail + ", phone="
+				+ phone + ", files=" + Arrays.toString(files) + "]";
 	}
+
+	
 
 }
