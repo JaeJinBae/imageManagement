@@ -73,7 +73,7 @@ public class HomeController {
 		return entity;
 	}
 	
-	@RequestMapping()
+	@RequestMapping(value="logout",method=RequestMethod.GET)
 	public String logout(HttpServletRequest req){
 		HttpSession session=req.getSession();
 		session.invalidate();
@@ -92,18 +92,15 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="addImg/{mno}", method=RequestMethod.GET)
-	public String addImgGet(@PathVariable("mno") int mno,HttpServletRequest req, Model model) throws Exception{
+	public String addImgGet(@PathVariable("mno") int mno, Model model) throws Exception{
 		logger.info("addImgGet");
 		
-		/*HttpSession session=req.getSession();
-		MemberVO vo=service.selectById(session.getAttribute("id").toString());
-		int mno=vo.getMno();*/
 		model.addAttribute("mno",mno);
 		return "addImg";
 	}
 	
 	@RequestMapping(value="addImg", method=RequestMethod.POST)
-	public String addImgPost(int mno, List<MultipartFile> imageFiles, RedirectAttributes rttr) throws Exception{
+	public String addImgPost(int mNo, List<MultipartFile> imageFiles, RedirectAttributes rttr) throws Exception{
 		logger.info("add Images Post");
 		
 		if(imageFiles.get(0).getBytes().length != 0){
@@ -113,7 +110,7 @@ public class HomeController {
 				logger.info("file : " + imageFiles.get(i).getOriginalFilename());
 				String savedName=UploadFileUtils.uploadFile(outUploadPath, imageFiles.get(i).getOriginalFilename(), imageFiles.get(i).getBytes());
 				files[i]=outUploadPath+savedName;
-				service.addAttach(files[i].toString(), mno);
+				service.addAttach(files[i].toString(), mNo);
 			}			
 		}
 		return "redirect:/imgList";

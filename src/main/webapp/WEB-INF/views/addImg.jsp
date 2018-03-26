@@ -18,11 +18,11 @@
 		<form method="post" action="addImg" enctype="multipart/form-data">
 			<div class="form-group">
 				<label>Image File</label>
-				<input type="hidden" name="mno" value="${mno}">
+				<input type="hidden" name="mNo" value="${mno}">
 				<input type="file" name="imageFiles" multiple="multiple" class="form-control">
 			</div>
 			<div class="form-group">
-				<input type="submit" value="submit" class="btn btn-primary">
+				<input type="submit" value="upload" class="btn btn-primary">
 			</div>
 		</form>
 	</div>
