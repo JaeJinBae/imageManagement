@@ -1,7 +1,9 @@
 package com.dgit.controller;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -85,8 +87,10 @@ public class HomeController {
 		logger.info("imgListGet");
 		HttpSession session=req.getSession();
 		MemberVO vo=service.selectById(session.getAttribute("id").toString());
-		int mno=vo.getMno();
-		model.addAttribute("mno",mno);
+		
+		List<String> list=service.getAttach(vo.getMno());
+		vo.setFiles(list.toArray(new String[list.size()]));
+		model.addAttribute("vo",vo);
 		
 		return "imgList";
 	}
@@ -166,6 +170,28 @@ public class HomeController {
 		}
 		return entity;
 	}
+	
+	@ResponseBody
+	@RequestMapping(value="deleteFile", method = RequestMethod.GET)
+	public ResponseEntity<String> deleteFile(String filename){
+		ResponseEntity<String> entity = null;
+		logger.info("deleteFile()");
+		logger.info("filename : " + filename);
+		try{
+			File del = new File(filename);
+			if(del.exists()){
+				del.delete();
+				service.deleteAttach(filename);
+				logger.info("Delete filename : " + filename);
+			}
+			entity = new ResponseEntity<String>("success", HttpStatus.OK);			
+		}catch(Exception e){
+			entity = new ResponseEntity<String>("success", HttpStatus.BAD_REQUEST);
+		}
+		
+		return entity;
+	}
+	
 	
 	
 	

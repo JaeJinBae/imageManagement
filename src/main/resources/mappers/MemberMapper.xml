@@ -20,7 +20,7 @@
 	</select>
 	
 	<delete id="deleteAttach">
-		delete from pattach where mno=#{mno}
+		delete from pattach where fullName=#{fullName}
 	</delete>
 
 </mapper>

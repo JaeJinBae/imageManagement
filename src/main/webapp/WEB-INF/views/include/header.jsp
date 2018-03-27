@@ -20,9 +20,10 @@
 		width:100%;
 		background: #5587ED;
 		min-width:620px;
+		text-align:center;
 	}
 	#header h2{
-		margin:0;
+		margin-top:10px;
 	}
 	#header #loginStatus{
 		width:100%;

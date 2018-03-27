@@ -43,8 +43,8 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 	@Override
-	public void deleteAttach(int mno) throws Exception {
-		session.delete(namespace+".deleteAttach",mno);
+	public void deleteAttach(String filename) throws Exception {
+		session.delete(namespace+".deleteAttach",filename);
 		
 	}
 

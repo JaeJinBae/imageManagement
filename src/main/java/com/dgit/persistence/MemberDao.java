@@ -9,5 +9,5 @@ public interface MemberDao {
 	public void insert(MemberVO vo) throws Exception;
 	public void addAttach(String fullName, int mno) throws Exception;
 	public List<String> getAttach(int mno) throws Exception;
-	public void deleteAttach(int mno) throws Exception;
+	public void deleteAttach(String filename) throws Exception;
 }

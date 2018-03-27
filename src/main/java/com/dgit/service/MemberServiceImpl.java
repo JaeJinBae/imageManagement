@@ -36,8 +36,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void deleteAttach(int mno) throws Exception {
-		dao.deleteAttach(mno);
+	public void deleteAttach(String filename) throws Exception {
+		dao.deleteAttach(filename);
 	}
 
 }

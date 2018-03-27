@@ -6,6 +6,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style type="text/css">
+	#insertWrap{
+		width:30%;
+		margin:0 auto;
+		margin-top:20px;
+		border:1px solid black;
+		padding:5px;
+	}
+	#insertWrap #f1{
+		width:400px;
+		margin:0 auto;
+	} 
+</style>
 <script type="text/javascript">
 	$(function(){
 		function idCheck(){
@@ -76,7 +89,7 @@
 </head>
 <body>
 <jsp:include page="include/header.jsp"></jsp:include>
-	<div>
+	<div id="insertWrap">
 		<form id="f1" method="post" action="register">
 			<table>
 				<tr>
