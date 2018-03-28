@@ -41,7 +41,6 @@
 </head>
 <body>
 <jsp:include page="include/header.jsp"></jsp:include>
-	
 	<div id="imgList">
 		<a href="addImg/${vo.mno}" id="btnUpload"><button>사진 업로드 하기</button></a>
 		<div class="form-group" id="image_wrap">
