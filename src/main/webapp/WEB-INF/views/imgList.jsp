@@ -50,7 +50,7 @@
 					<p>등록일:${fn:substring(file,14,25)}, 파일명: ${fn:substring(file,64, leng)}</p>
 					<img src="displayFile?filename=${file}">
 					<button data-del="${file }" class="btnDel">X</button>
-				</div>
+				</div> 
 				<br>
 			</c:forEach>
 		</div>
