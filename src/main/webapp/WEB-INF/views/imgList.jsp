@@ -39,7 +39,7 @@
 	});
 </script>
 </head>
-<body>
+<body> 
 <jsp:include page="include/header.jsp"></jsp:include>
 	
 	<div id="imgList">
