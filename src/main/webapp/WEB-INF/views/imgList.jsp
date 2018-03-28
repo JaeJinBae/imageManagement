@@ -37,7 +37,7 @@
 	        $(this).parent().remove();
 		});
 	});
-</script>
+</script> 
 </head>
 <body> 
 <jsp:include page="include/header.jsp"></jsp:include>
@@ -45,7 +45,6 @@
 	<div id="imgList">
 		<a href="addImg/${vo.mno}" id="btnUpload"><button>사진 업로드 하기</button></a>
 		<div class="form-group" id="image_wrap">
-			
 			<c:forEach var="file" items="${vo.files}">
 				<div class="imgWrap">
 				<c:set var="leng" value="${fn:length(file)}"/>
