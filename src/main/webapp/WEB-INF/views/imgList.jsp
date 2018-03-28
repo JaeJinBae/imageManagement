@@ -41,7 +41,6 @@
 </head>
 <body> 
 <jsp:include page="include/header.jsp"></jsp:include>
-	
 	<div id="imgList">
 		<a href="addImg/${vo.mno}" id="btnUpload"><button>사진 업로드 하기</button></a>
 		<div class="form-group" id="image_wrap">
@@ -51,8 +50,8 @@
 					<p>등록일: ${fn:substring(file,14,25)}, 파일명: ${fn:substring(file,64, leng)}</p>
 					<img src="displayFile?filename=${file}">
 					<button data-del="${file }" class="btnDel">X</button>
-				</div>
-				
+				</div> 
+				<br>
 			</c:forEach>
 		</div>
 	</div>
